@@ -1,10 +1,13 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchStudentBoard } from '../redux/actions/studentBoardAction'
+import { fetchStudentBoard } from '../redux/actions/studentBoardActions'
 
-const mapStateToProps = state => ({
-
-})
+const mapStateToProps = (store) => (
+    {
+        studentBoardList: store.studentBoard.boardList,
+        studentBoardFetched: store.studentBoard.fetched
+    }
+)
 
 class Index extends Component {
 

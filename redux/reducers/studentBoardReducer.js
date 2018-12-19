@@ -1,5 +1,5 @@
 const initialState = {
-    studentBoard: {},
+    boardList: {},
     fetching: false,
     fetched: false,
     error: null

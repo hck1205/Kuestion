@@ -1,14 +1,14 @@
 import axios from 'axios'
 
-const apiServer = "localhost:3030"
+const apiServer = "http://localhost:3030"
 
 export default function API(url, method="GET", data={}) {
     axios({
         method: method,
         url: apiServer + url,
-        data: data
+        data: data,
     }).then((res)=> {
-        console.log(res)
+        // console.log(res.data)
     }).catch((error) => {
         if (error.response) {
             console.log("API Error:", error.response.data);
