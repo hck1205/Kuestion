@@ -4,6 +4,7 @@
   "description": "expatik-client",
   "main": "index.js",
   "scripts": {
+    "node": "nodemon server/index.js",
     "dev": "next",
     "build": "next build",
     "start": "next start",
@@ -22,6 +23,9 @@
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
     "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.0",
     "next": "^7.0.2",
     "node-sass": "^4.11.0",
     "react": "^16.6.3",
