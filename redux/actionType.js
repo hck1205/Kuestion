@@ -1,3 +1,3 @@
-export const STUDENT_BOARD = {
-    GET_BOARD_LIST: "GET_STUDENT_BOARD_LIST"
-}
+// export const USER = {
+//     USER_LIST: "USER_LIST"
+// }

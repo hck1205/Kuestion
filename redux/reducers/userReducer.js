@@ -1,5 +1,9 @@
 const initialState = {
-    userInfo: {},
+    user: {
+        id: null,
+        name: null,
+        age: null
+    },
     fetching: false,
     fetched: false,
     error: null
@@ -18,7 +22,7 @@ export default function reducer(state = initialState, action) {
                 ...state,
                 fetching: false,
                 fetched: true,
-                userInfo: action.payload
+                user: action.payload
             }
         }
     }

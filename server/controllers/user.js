@@ -1,18 +1,18 @@
-const Student = require('../models/student');
+const User = require('../models/user');
 
 exports.create = function(req, res) {
-    let student = new Student({
+    let user = new User({
         name: req.body.name,
         age: req.body.age
     });
 
-    student.save(() => {
+    user.save(() => {
         res.send('Saved!');
     });
 };
 
 exports.get = (req, res) => {
-    Student.find((error, students) => {
+    User.find((error, students) => {
         res.send(students);
     })
 };

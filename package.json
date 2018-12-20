@@ -4,7 +4,8 @@
   "description": "expatik-client",
   "main": "index.js",
   "scripts": {
-    "node": "nodemon server/index.js",
+    "node": "next build && node server/index.js",
+    "nodev": "next build && nodemon server/index.js",
     "dev": "next",
     "build": "next build",
     "start": "next start",
@@ -12,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hck1205/expatik-client.git"
+    "url": "git+https://github.com/hck1205/expatik.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hck1205/expatik-client/issues"
+    "url": "https://github.com/hck1205/expatik/issues"
   },
-  "homepage": "https://github.com/hck1205/expatik-client#readme",
+  "homepage": "https://github.com/hck1205/expatik#readme",
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
     "axios": "^0.18.0",
@@ -36,5 +37,6 @@
     "redux-promise-middleware": "^5.1.1",
     "redux-thunk": "^2.3.0",
     "remote-redux-devtools": "^0.5.14"
-  }
+  },
+  "proxy": "http://localhost:3000/"
 }

@@ -1,23 +1,24 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchStudentBoard } from '../redux/actions/studentBoardActions'
+import { fetchUser } from '../redux/actions/userActions'
 
 const mapStateToProps = (store) => (
     {
-        studentBoardList: store.studentBoard.boardList,
-        studentBoardFetched: store.studentBoard.fetched
+        user: store.user.user,
+        userFetched: store.user.fetched,
     }
 )
 
 class Index extends Component {
 
-    componentWillMount() {
-        fetchStudentBoard()
+    componentDidMount() {
+        this.props.dispatch(fetchUser())
     }
 
     render() {
+        console.log(this.props.user)
         return(
-            <div>test</div>
+            <div>{}</div>
         )
     }
 }

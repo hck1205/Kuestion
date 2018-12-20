@@ -17,15 +17,15 @@ app.prepare()
        app.use(bodyParser.json())
        app.use(bodyParser.urlencoded({extended:false}));
 
-       const studentRoute = require('./routes/student.js')
-       app.use("/api/student", studentRoute)
+       const studentRoute = require('./routes/user.js')
+       app.use("/user", studentRoute)
 
        app.get("*", (req, res) => {
            return handle(req, res)
        })
 
-       app.listen(CONFIG.PORT, (error) => {
-           if(error) throw error
+       app.listen(CONFIG.PORT, (err) => {
+           if(err) throw err
            console.log(`> Ready on ${CONFIG.PORT}`)
        })
    })
