@@ -17,8 +17,10 @@ app.prepare()
        app.use(bodyParser.json())
        app.use(bodyParser.urlencoded({extended:false}));
 
-       const studentRoute = require('./routes/user.js')
-       app.use("/user", studentRoute)
+       const userRoute = require('./routes/user.js')
+       const systemRoute = require('./routes/system.js')
+       app.use("/user", userRoute)
+       app.use("/system", systemRoute)
 
        app.get("*", (req, res) => {
            return handle(req, res)

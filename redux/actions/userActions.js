@@ -11,11 +11,10 @@ import axios from "axios"
 // }
 
 export function fetchUser() {
-
-    return function(dispatch) {
-        axios.get("/user/getAll")
-            .then((response) => {
-                dispatch({ type: "FETCH_USER_FULFILLED", payload: response.data})
+    return dispatch => {
+        axios.get("/user/all")
+            .then((res) => {
+                dispatch({ type: "FETCH_USER_FULFILLED", payload: res.data})
             })
             .catch((err) => {
                 dispatch({ type: "FETCH_USER_REJECTED", payload: err})
