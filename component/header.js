@@ -1,10 +1,13 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
-import { getDateTime } from '../redux/actions/systemAction'
+import { getDatetime } from '../redux/actions/timeAction'
 
 const mapStateToProps = (store) => (
     {
-        dateTime: ""
+        datetime: store.time.datetime,
+        // fetching: store.time.fetching,
+        // fetched: store.time.fetched,
+        // error: store.time.error
     }
 )
 
@@ -12,20 +15,35 @@ class header extends Component {
 
     constructor(props) {
         super(props);
-        this.props.dispatch(getDateTime())
     }
 
     componentWillMount() {
+        this.props.dispatch(getDatetime())
     }
 
     componentDidMount() {
+        console.log()
+        // this.props.dispatch(set)
+    }
 
+    startTimer(today) {
+        setInterval(()=> {
+            console.log(today)
+        }, 1000)
     }
 
     render() {
-        return (
-            <div id="headerContainer"></div>
-        )
+        let { datetime } = this.props
+
+        if(datetime !== "") {
+            return(
+                <div>{datetime}</div>
+            )
+        } else {
+            return (
+                <div>test</div>
+            )
+        }
     }
 }
 

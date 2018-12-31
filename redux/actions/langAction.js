@@ -1,5 +1,3 @@
-import axios from "axios";
-
 const langPack = {
     EN: {
         k_culture: {
@@ -21,15 +19,3 @@ export const setLanguage = lang => ({
     type: "SET_LANGUAGE",
     payload: langPack[lang],
 })
-
-export const getDateTime = () => {
-    return dispatch => {
-        axios.get("/system/time")
-            .then((res) => {
-                dispatch({ type: "FETCH_DATETIME_FULFILLED", payload: res.data})
-            })
-            .catch((err) => {
-                dispatch({ type: "FETCH_DATETIME_REJECTED", payload: err})
-            })
-    }
-}

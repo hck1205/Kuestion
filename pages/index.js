@@ -1,17 +1,19 @@
 import { Component } from 'react'
-// import { connect } from 'react-redux'
-// import { fetchUser } from '../redux/actions/userActions'
+import { connect } from 'react-redux'
+import { fetchUser } from '../redux/actions/userActions'
 // import { setMenuLang } from '../redux/actions/langPackAction'
 
+import Head from "../component/common/head";
 import Header from "../component/header"
 
-// const mapStateToProps = (store) => (
-//     {
-//         user: store.user.user,
-//         userFetched: store.user.fetched,
-//         menu: store.langPack
-//     }
-// )
+
+const mapStateToProps = (store) => (
+    {
+        user: store.user.user,
+        userFetched: store.user.fetched,
+        // menu: store.langPack
+    }
+)
 
 class Index extends Component {
 
@@ -25,18 +27,27 @@ class Index extends Component {
     }
 
     render() {
-        // if(this.props.user.length > 0) {
-        //     return <div>{this.props.user[0].name}</div>
-        // }  else {
-        //     return <div></div>
-        // }
-        return (
-            <div id="mainPage">
-                <Header />
-            </div>
-        )
+        if(this.props.user.length > 0) {
+            return (
+                <div>
+                    <Header />
+                    {this.props.user[0].name}
+                </div>
+            )
+        }  else {
+            return (
+                <div>
+                    <Header />
+                </div>
+            )
+        }
+        // return (
+            {/*<div id="mainPage">*/}
+                {/*<Header />*/}
+            // </div>
+        // )
     }
 }
 
-// export default connect(mapStateToProps)(Index)
-export default Index
+export default connect(mapStateToProps)(Index)
+// export default Index

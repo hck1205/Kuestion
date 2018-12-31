@@ -10,17 +10,12 @@ import axios from "axios"
 //     }
 // }
 
-export function fetchUser() {
-    return dispatch => {
-        axios.get("/user/all")
-            .then((res) => {
-                dispatch({ type: "FETCH_USER_FULFILLED", payload: res.data})
-            })
-            .catch((err) => {
-                dispatch({ type: "FETCH_USER_REJECTED", payload: err})
-            })
-    }
-}
+export const fetchUser = () => (
+    dispatch => axios.get("/user/all")
+            .then(res => dispatch({ type: "FETCH_USER_FULFILLED", payload: res.data}))
+            .catch(err => dispatch({ type: "FETCH_USER_REJECTED", payload: err}))
+)
+
 
 // export function setUserName(name) {
 //     return {
