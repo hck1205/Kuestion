@@ -10,6 +10,7 @@ const Head = (props) => (
         <title>{props.title || ''}</title>
         <meta name="description" content={props.description || defaultDescription} />
         <link href='//fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css' />
+        <link href='/static/css/normalize.css' rel="stylesheet" type='text/css' />
     </NextHead>
 )
 

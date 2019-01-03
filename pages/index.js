@@ -27,25 +27,19 @@ class Index extends Component {
     }
 
     render() {
-        if(this.props.user.length > 0) {
-            return (
-                <div>
-                    <Header />
-                    {this.props.user[0].name}
-                </div>
-            )
-        }  else {
-            return (
-                <div>
-                    <Header />
-                </div>
-            )
-        }
-        // return (
-            {/*<div id="mainPage">*/}
-                {/*<Header />*/}
-            // </div>
-        // )
+        return (
+            <div id="mainPage">
+                <Head title={""} description={""} />
+                <Header />
+                <style jsx> {`
+                    #mainPage {
+                        width: 1200px;
+                        margin: auto;
+                        background: aliceblue;
+                    }
+                `}</style>
+            </div>
+         )
     }
 }
 
