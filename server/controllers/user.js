@@ -12,7 +12,8 @@ exports.create = function(req, res) {
 };
 
 exports.get = (req, res) => {
-    User.find((error, students) => {
-        res.send(students);
-    })
+    console.log()
+    // User.find((error, students) => {
+    //     res.send(students);
+    // })
 };

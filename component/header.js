@@ -71,47 +71,46 @@ class header extends React.Component {
 
                 <style jsx>{`
                   #header {
-                    width: 1200px;
+                    width: 1100px;
                     height: 120px;
                     border: 1px solid black;
                   }
                   #datetimeArea {
-                    width: 250px;
+                    width: 200px;
                     height: 120px;
                     font-size: 13px;
                     position: absolute;
                   }
                   #datetimeWords {
                     margin-top: 25px;
-                    margin-left: 15px;
+                    margin-left: 20px;
                   }
                   #today {
                     margin-top: 3px;
-                    margin-left: 14px;
+                    margin-left: 19px;
                   }
                   #visitorCounter {
                     margin-top: 25px;
-                    margin-left: 15px;
+                    margin-left: 20px;
                   }
                   #titleArea {
                     width: 250px;
                     height: 120px;
-                    margin-left: 250px;
+                    margin-left: 220px;
                     position: absolute;
                   }
                   #title {
                     font-size: 35px;
                     font-weight: bold;
                     margin-top: 25px;
-                    margin-left: 45px;
+                    margin-left: 10px;
                   }
                   #fullTitle {
-                    margin-left: 35px;
                     margin-top: 1px;
                     font-size: 18px;
                   }
                   #searchField {
-                    margin-left: 500px;
+                    margin-left: 420px;
                     height: 25px;
                     width: 300px;
                     margin-top: 42px;
@@ -125,12 +124,12 @@ class header extends React.Component {
                     font-weight: bold;
                     background: #e2eff5;
                     border: 1px solid #abd4e8;
-                    margin-left: 804px;
+                    margin-left: 724px;
                     margin-top: 42px;
                   }
                   #headerImg {
                     width: 269px;
-                    margin-left: 930px;
+                    margin-left: 830px;
                   }
                 `}</style>
             </div>

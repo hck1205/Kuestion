@@ -33,7 +33,7 @@ class Index extends Component {
                 <Header />
                 <style jsx> {`
                     #mainPage {
-                        width: 1200px;
+                        width: 1100px;
                         margin: auto;
                         background: aliceblue;
                     }
