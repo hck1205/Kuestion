@@ -1,7 +1,8 @@
-import React from 'react'
+import { Component } from 'react'
 import { connect } from 'react-redux'
 import { getDatetime, updateDatetime } from '../redux/actions/timeAction'
 import { formatDatetime } from "../static/js/expatik_help";
+import Menu from "./menu"
 
 const mapStateToProps = (store) => (
     {
@@ -12,7 +13,7 @@ const mapStateToProps = (store) => (
     }
 )
 
-class header extends React.Component {
+class Header extends Component {
 
     constructor(props) {
         super(props);
@@ -68,73 +69,75 @@ class header extends React.Component {
                     <button id={"searchBtn"} onClick={this.searchAll}>Search</button>
                 </div>
                 <img id={"headerImg"} src={"/static/img/header_img.png"} />
+                <Menu />
 
                 <style jsx>{`
-                  #header {
-                    width: 1100px;
-                    height: 120px;
-                    border: 1px solid black;
-                  }
-                  #datetimeArea {
-                    width: 200px;
-                    height: 120px;
-                    font-size: 13px;
-                    position: absolute;
-                  }
-                  #datetimeWords {
-                    margin-top: 25px;
-                    margin-left: 20px;
-                  }
-                  #today {
-                    margin-top: 3px;
-                    margin-left: 19px;
-                  }
-                  #visitorCounter {
-                    margin-top: 25px;
-                    margin-left: 20px;
-                  }
-                  #titleArea {
-                    width: 250px;
-                    height: 120px;
-                    margin-left: 220px;
-                    position: absolute;
-                  }
-                  #title {
-                    font-size: 35px;
-                    font-weight: bold;
-                    margin-top: 25px;
-                    margin-left: 10px;
-                  }
-                  #fullTitle {
-                    margin-top: 1px;
-                    font-size: 18px;
-                  }
-                  #searchField {
-                    margin-left: 420px;
-                    height: 25px;
-                    width: 300px;
-                    margin-top: 42px;
-                    position: absolute;
-                  }
-                  #searchBtn {
-                    position: absolute;
-                    width: 65px;
-                    color: #6a959b;
-                    height: 31px;
-                    font-weight: bold;
-                    background: #e2eff5;
-                    border: 1px solid #abd4e8;
-                    margin-left: 724px;
-                    margin-top: 42px;
-                  }
-                  #headerImg {
-                    width: 269px;
-                    margin-left: 830px;
-                  }
-                `}</style>
+                    #header {
+                        width: 1100px;
+                        height: 120px;
+                        border: 1px solid black;
+                    }
+                    #datetimeArea {
+                        width: 200px;
+                        height: 120px;
+                        font-size: 13px;
+                        position: absolute;
+                    }
+                    #datetimeWords {
+                        margin-top: 25px;
+                        margin-left: 20px;
+                    }
+                    #today {
+                        margin-top: 3px;
+                        margin-left: 19px;
+                    }
+                    #visitorCounter {
+                        margin-top: 25px;
+                        margin-left: 20px;
+                    }
+                    #titleArea {
+                        width: 250px;
+                        height: 120px;
+                        margin-left: 220px;
+                        position: absolute;
+                    }
+                    #title {
+                        font-size: 35px;
+                        font-weight: bold;
+                        margin-top: 25px;
+                        margin-left: 10px;
+                    }
+                    #fullTitle {
+                        margin-top: 1px;
+                        font-size: 18px;
+                    }
+                    #searchField {
+                        margin-left: 420px;
+                        height: 25px;
+                        width: 300px;
+                        margin-top: 42px;
+                        position: absolute;
+                    }
+                    #searchBtn {
+                        position: absolute;
+                        width: 65px;
+                        color: #6a959b;
+                        height: 31px;
+                        font-weight: bold;
+                        background: #e2eff5;
+                        border: 1px solid #abd4e8;
+                        margin-left: 724px;
+                        margin-top: 42px;
+                    }
+                    #headerImg {
+                        width: 269px;
+                        margin-left: 830px;
+                    }
+                `}
+                </style>
             </div>
         )
     }
 }
 
-export default connect(mapStateToProps)(header)
+export default connect(mapStateToProps)(Header)
