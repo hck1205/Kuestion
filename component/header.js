@@ -2,7 +2,6 @@ import { Component } from 'react'
 import { connect } from 'react-redux'
 import { getDatetime, updateDatetime } from '../redux/actions/timeAction'
 import { formatDatetime } from "../static/js/expatik_help";
-import Menu from "./menu"
 
 const mapStateToProps = (store) => (
     {
@@ -26,13 +25,10 @@ class Header extends Component {
     }
 
     componentDidMount() {
-        let setDatetime = new Promise(function(resolve, reject) {
+        new Promise(function(resolve, reject) {
             resolve(this.props.dispatch(getDatetime()))
-        }.bind(this));
-
-        setDatetime.then(() => {
+        }.bind(this)).then(() => {
             let datetime = this.props.datetime
-
             setInterval(() => {
                 this.props.dispatch(updateDatetime(datetime += 1000))
             },1000)
@@ -55,12 +51,8 @@ class Header extends Component {
 
         return (
             <div id={"header"}>
-                <div id={"datetimeArea"}>
-                    <div id={"datetimeWords"}>{today !== "" ? "Korean date and time:" : ""}</div>
-                    <div id={"today"}>{today}</div>
-                    <div id={"visitorCounter"}>Visitors 0</div>
-                </div>
                 <div id={"titleArea"}>
+                    <img id={"headerImg"} src={"/static/img/header_icon.png"} />
                     <div id={"title"}>EXPATIK</div>
                     <div id={"fullTitle"}>Expatriates in Korea</div>
                 </div>
@@ -68,23 +60,25 @@ class Header extends Component {
                     <input id={"searchField"} type="text" onChange={this.updateSearchText} />
                     <button id={"searchBtn"} onClick={this.searchAll}>Search</button>
                 </div>
-                <img id={"headerImg"} src={"/static/img/header_img.png"} />
-                <Menu />
-
+                <div id={"datetimeArea"}>
+                    <div id={"datetimeWords"}>{today !== "" ? "Korean date and time:" : ""}</div>
+                    <div id={"today"}>{today}</div>
+                    <div id={"visitorCounter"}>Visitors 0</div>
+                </div>
                 <style jsx>{`
                     #header {
                         width: 1100px;
                         height: 120px;
                         border: 1px solid black;
+                        font-family: 'Viga', serif;
                     }
-                    #datetimeArea {
-                        width: 200px;
-                        height: 120px;
-                        font-size: 13px;
+                    #headerImg {
+                        width: 66px;
+                        margin-top: 25px;
                         position: absolute;
                     }
                     #datetimeWords {
-                        margin-top: 25px;
+                        margin-top: 28px;
                         margin-left: 20px;
                     }
                     #today {
@@ -92,30 +86,31 @@ class Header extends Component {
                         margin-left: 19px;
                     }
                     #visitorCounter {
-                        margin-top: 25px;
+                        margin-top: 15px;
                         margin-left: 20px;
                     }
                     #titleArea {
                         width: 250px;
                         height: 120px;
-                        margin-left: 220px;
+                        margin-left: 30px;
                         position: absolute;
                     }
                     #title {
-                        font-size: 35px;
+                        font-size: 40px;
                         font-weight: bold;
-                        margin-top: 25px;
-                        margin-left: 10px;
+                        margin-top: 22px;
+                        margin-left: 80px;
                     }
                     #fullTitle {
                         margin-top: 1px;
+                        margin-left: 80px;
                         font-size: 18px;
                     }
                     #searchField {
-                        margin-left: 420px;
                         height: 25px;
-                        width: 300px;
+                        width: 330px;
                         margin-top: 42px;
+                        margin-left: 390px;
                         position: absolute;
                     }
                     #searchBtn {
@@ -123,15 +118,17 @@ class Header extends Component {
                         width: 65px;
                         color: #6a959b;
                         height: 31px;
-                        font-weight: bold;
                         background: #e2eff5;
                         border: 1px solid #abd4e8;
                         margin-left: 724px;
                         margin-top: 42px;
                     }
-                    #headerImg {
-                        width: 269px;
-                        margin-left: 830px;
+                    #datetimeArea {
+                        width: 200px;
+                        height: 120px;
+                        font-size: 13px;
+                        position: absolute;
+                        margin-left: 900px;
                     }
                 `}
                 </style>

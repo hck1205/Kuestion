@@ -1,7 +1,3 @@
-// export const USER = {
-//     USER_LIST: "USER_LIST"
-// }
-
 export const TIME = {
     FETCH_DATETIME: "FETCH_DATETIME",
     FETCH_DATETIME_REJECTED: "FETCH_DATETIME_REJECTED",

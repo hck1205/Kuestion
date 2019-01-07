@@ -13,5 +13,5 @@ export const formatDatetime = (datetime) => {
     let min = addZero(today.getMinutes())
     let sec = addZero(today.getSeconds())
 
-    return hr + ":" + min + " " + dd + ". " + mm + ". (" + day  + ")"
+    return hr + ":" + min + ":"+ sec + " " + dd + ". " + mm + ". (" + day  + ")"
 }

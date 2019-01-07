@@ -5,6 +5,7 @@ import { fetchUser } from '../redux/actions/userActions'
 
 import Head from "../component/common/head";
 import Header from "../component/header"
+import Menu from "../component/menu"
 
 
 const mapStateToProps = (store) => (
@@ -31,11 +32,11 @@ class Index extends Component {
             <div id="mainPage">
                 <Head title={""} description={""} />
                 <Header />
+                <Menu />
                 <style jsx> {`
                     #mainPage {
                         width: 1100px;
                         margin: auto;
-                        background: aliceblue;
                     }
                 `}</style>
             </div>
