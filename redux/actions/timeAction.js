@@ -1,13 +1,15 @@
 import axios from "axios";
+import axiosConfig from "./axiosConfig"
 import { TIME } from "../actionType"
+
 
 export const updateDatetime = datetime => ({
     type: TIME.UPDATE_DATETIME,
     payload: datetime,
 })
 
-export const getDatetime = () => (
-      dispatch => axios.get("/system/time")
-            .then(res => dispatch({ type: TIME.FETCH_DATETIME_FULFILLED, payload: res.data }))
-            .catch(err => dispatch({ type: TIME.FETCH_DATETIME_REJECTED, payload: err }))
-)
+export const fetchDatetime = () => ({
+    type: TIME.FETCH_DATETIME,
+    payload: axios(axiosConfig("GET", "/system/time")).then(res => res.data)
+})
+

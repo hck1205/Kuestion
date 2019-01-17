@@ -1,6 +1,8 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchUser } from '../redux/actions/userActions'
+import { fetchDatetime } from '../redux/actions/timeAction'
+
 // import { setMenuLang } from '../redux/actions/langPackAction'
 
 import Head from "../component/common/head";
@@ -20,11 +22,11 @@ class Index extends Component {
 
     constructor(props) {
         super(props);
-        // this.props.dispatch(setMenuLang("KO"))
     }
 
+
     componentWillMount() {
-        // this.props.dispatch(fetchUser())
+        // this.props.dispatch(setMenuLang("KO"))
     }
 
     render() {
@@ -32,7 +34,7 @@ class Index extends Component {
             <div id="mainPage">
                 <Head title={""} description={""} />
                 <Header />
-                <Menu />
+                {/*<Menu />*/}
                 <style jsx> {`
                     #mainPage {
                         width: 1100px;

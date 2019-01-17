@@ -1,16 +1,10 @@
+import initialState from "../initialState"
 import { TIME } from "../actionType"
 
-const initialState = {
-    datetime: "",
-    fetching: false,
-    fetched: false,
-    error: null
-}
 
-export default function reducer(state = initialState, action) {
+export default function reducer(state = initialState.time, action) {
     switch(action.type) {
-        // get system date time
-        case TIME.FETCH_DATETIME:
+        case TIME.FETCH_DATETIME_PENDING:
             return { ...state, fetching: true }
 
         case TIME.FETCH_DATETIME_REJECTED:

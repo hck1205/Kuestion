@@ -1,15 +1,6 @@
-const initialState = {
-    user: {
-        id: null,
-        name: null,
-        age: null
-    },
-    fetching: false,
-    fetched: false,
-    error: null
-}
+import initialState from "../initialState"
 
-export default function reducer(state = initialState, action) {
+export default function reducer(state = initialState.user, action) {
 
     switch(action.type) {
         case "FETCH_USER": {
