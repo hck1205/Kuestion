@@ -1,6 +1,4 @@
-const withSass = require('@zeit/next-sass');
-
-module.exports = withSass({
+module.exports = {
     serverRuntimeConfig: { // Will only be available on the server side
     },
     publicRuntimeConfig: { // Will be available on both server and client
@@ -12,4 +10,4 @@ module.exports = withSass({
         }
         return config
     }
-});
+};

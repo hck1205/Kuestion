@@ -56,71 +56,26 @@ class Header extends Component {
                 <div id={"titleArea"}>
                     <div id={"title"}>Kuestion</div>
                 </div>
-                <div id={"searchArea"}>
-                    <input id={"searchField"} type="text" onChange={this.updateSearchText} />
-                    <button id={"searchBtn"} onClick={this.searchAll}>Search</button>
-                </div>
-                <div id={"datetimeArea"}>
-                    <div id={"datetimeWords"}>{today !== "" ? "Korean date and time:" : ""}</div>
-                    <div id={"today"}>{today}</div>
-                    <div id={"visitorCounter"}>Visitors 0</div>
-                </div>
+
                 <style jsx>{`
                     #header {
                         width: 1100px;
-                        height: 120px;
+                        min-height: 50px;
                         border: 1px solid black;
                         font-family: 'Baloo Tamma';
-                    }
-
-                    #datetimeWords {
-                        margin-top: 28px;
-                        margin-left: 20px;
-                    }
-                    #today {
-                        margin-top: 3px;
-                        margin-left: 19px;
-                    }
-                    #visitorCounter {
-                        margin-top: 15px;
-                        margin-left: 20px;
+                        margin: auto;
                     }
                     #titleArea {
-                        width: 250px;
+                        width: 200px;
                         height: 120px;
-                        margin-left: 30px;
                         position: absolute;
                     }
                     #title {
-                        font-size: 40px;
-                        font-weight: bold;
-                        margin-top: 22px;
-                        margin-left: 80px;
+                        font-size: 35px;
+                        margin-top: 8px;
+                        color: #b92b27;
                     }
-                    #searchField {
-                        height: 25px;
-                        width: 330px;
-                        margin-top: 42px;
-                        margin-left: 390px;
-                        position: absolute;
-                    }
-                    #searchBtn {
-                        position: absolute;
-                        width: 65px;
-                        color: #6a959b;
-                        height: 31px;
-                        background: #e2eff5;
-                        border: 1px solid #abd4e8;
-                        margin-left: 724px;
-                        margin-top: 42px;
-                    }
-                    #datetimeArea {
-                        width: 200px;
-                        height: 120px;
-                        font-size: 13px;
-                        position: absolute;
-                        margin-left: 900px;
-                    }
+
                 `}
                 </style>
             </div>

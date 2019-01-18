@@ -23,7 +23,6 @@
   },
   "homepage": "https://github.com/hck1205/expatik#readme",
   "dependencies": {
-    "@zeit/next-sass": "^1.0.1",
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",

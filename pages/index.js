@@ -45,8 +45,9 @@ class Index extends Component {
                 {/*<Menu />*/}
                 <style jsx> {`
                     #mainPage {
-                        width: 1100px;
                         margin: auto;
+                        border-bottom: 1px solid #ddd;
+                        box-shadow: 0 3px 2px -2px rgba(200,200,200,0.2);
                     }
                 `}</style>
             </div>
