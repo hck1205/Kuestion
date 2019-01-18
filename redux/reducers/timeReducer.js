@@ -1,8 +1,8 @@
-import initialState from "../initialState"
+import initialStore from "../initialStore"
 import { TIME } from "../actionType"
 
 
-export default function reducer(state = initialState.time, action) {
+export default function reducer(state = initialStore.time, action) {
     switch(action.type) {
         case TIME.FETCH_DATETIME_PENDING:
             return { ...state, fetching: true }
@@ -15,6 +15,8 @@ export default function reducer(state = initialState.time, action) {
 
         case TIME.UPDATE_DATETIME:
             return { datetime: action.payload }
+
+        default:
+            return { ...state }
     }
-    return state
 }

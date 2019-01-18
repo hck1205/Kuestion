@@ -2,6 +2,7 @@ import { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchUser } from '../redux/actions/userActions'
 import { fetchDatetime } from '../redux/actions/timeAction'
+import store from '../redux/store'
 
 // import { setMenuLang } from '../redux/actions/langPackAction'
 
@@ -12,9 +13,7 @@ import Menu from "../component/menu"
 
 const mapStateToProps = (store) => (
     {
-        user: store.user.user,
-        userFetched: store.user.fetched,
-        // menu: store.langPack
+
     }
 )
 
@@ -24,6 +23,15 @@ class Index extends Component {
         super(props);
     }
 
+    static async getInitialProps({reduxStore, req}) {
+
+        // initial dispatch
+        await Promise.all([
+            reduxStore.dispatch(fetchDatetime()),
+        ])
+
+        return {};
+    }
 
     componentWillMount() {
         // this.props.dispatch(setMenuLang("KO"))

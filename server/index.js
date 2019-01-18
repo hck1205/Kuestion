@@ -1,5 +1,5 @@
 const express = require('express')
-const CONFIG = require('./config');
+const CONFIG = require('../config/serverConfig');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const next = require('next')
@@ -19,6 +19,7 @@ app.prepare()
 
        const userRoute = require('./routes/user.js')
        const systemRoute = require('./routes/system.js')
+
        app.use("/user", userRoute)
        app.use("/system", systemRoute)
 

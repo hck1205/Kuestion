@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
-import {fetchDatetime, getDatetime, updateDatetime} from '../redux/actions/timeAction'
+import { updateDatetime } from '../redux/actions/timeAction'
 import { formatDatetime } from "../static/js/expatik_help";
 
 const mapStateToProps = (store) => (
@@ -26,16 +26,15 @@ class Header extends Component {
 
     componentWillMount() {}
 
-    async componentDidMount() {
-
-        await this.props.dispatch(fetchDatetime())
-
-        let currentTime = this.props.datetime;
-
-        setInterval(() => {
-            this.props.dispatch(updateDatetime(currentTime += 1000))
-        },1000)
-
+    componentDidMount() {
+        let currentTime = 0
+        
+        if(this.props.datetime !== 0) {
+            currentTime = this.props.datetime
+            setInterval(() => {
+                this.props.dispatch(updateDatetime(currentTime += 1000))
+            },1000)
+        }
     }
 
     updateSearchText(e) {

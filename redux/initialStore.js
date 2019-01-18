@@ -1,4 +1,4 @@
-let initialState = {
+const initialStore = {
     time: {
         datetime: 0,
         fetching: false,
@@ -25,4 +25,4 @@ let initialState = {
     }
 }
 
-export default initialState
+export default initialStore
