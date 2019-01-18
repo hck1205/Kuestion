@@ -28,7 +28,7 @@ class Header extends Component {
 
     componentDidMount() {
         let currentTime = 0
-        
+
         if(this.props.datetime !== 0) {
             currentTime = this.props.datetime
             setInterval(() => {
@@ -54,9 +54,7 @@ class Header extends Component {
         return (
             <div id={"header"}>
                 <div id={"titleArea"}>
-                    <img id={"headerImg"} src={"/static/img/header_icon.png"} />
-                    <div id={"title"}>EXPATIK</div>
-                    <div id={"fullTitle"}>Expatriates in Korea</div>
+                    <div id={"title"}>Kuestion</div>
                 </div>
                 <div id={"searchArea"}>
                     <input id={"searchField"} type="text" onChange={this.updateSearchText} />
@@ -72,13 +70,9 @@ class Header extends Component {
                         width: 1100px;
                         height: 120px;
                         border: 1px solid black;
-                        font-family: 'Viga', serif;
+                        font-family: 'Baloo Tamma';
                     }
-                    #headerImg {
-                        width: 66px;
-                        margin-top: 25px;
-                        position: absolute;
-                    }
+
                     #datetimeWords {
                         margin-top: 28px;
                         margin-left: 20px;
@@ -102,11 +96,6 @@ class Header extends Component {
                         font-weight: bold;
                         margin-top: 22px;
                         margin-left: 80px;
-                    }
-                    #fullTitle {
-                        margin-top: 1px;
-                        margin-left: 80px;
-                        font-size: 18px;
                     }
                     #searchField {
                         height: 25px;
