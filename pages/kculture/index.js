@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Head from '../../component/common/head'
+import Head from '../../component/common/Head'
 
 
 const mapStateToProps = (store) => (

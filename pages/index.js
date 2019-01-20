@@ -1,15 +1,13 @@
-import { Component } from 'react'
+import 'core-js/es6/object'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchUser } from '../redux/actions/userActions'
+import Head from "../component/common/Head"
+import LangSelector from "../component/common/LangSelector"
+import Header from "../component/Header"
+import Body from "../component/Body"
+
 import { fetchDatetime } from '../redux/actions/timeAction'
-import store from '../redux/store'
-
 // import { setMenuLang } from '../redux/actions/langPackAction'
-
-import Head from "../component/common/head";
-import Header from "../component/header"
-import Menu from "../component/menu"
-
 
 const mapStateToProps = (store) => (
     {
@@ -25,10 +23,11 @@ class Index extends Component {
 
     static async getInitialProps({reduxStore, req}) {
 
-        // initial dispatch
-        await Promise.all([
+        await Promise.all([ // initial dispatch
             reduxStore.dispatch(fetchDatetime()),
-        ])
+        ]).then(() => {
+            return {}
+        });
 
         return {};
     }
@@ -37,17 +36,35 @@ class Index extends Component {
         // this.props.dispatch(setMenuLang("KO"))
     }
 
+    componentDidMount() {
+    }
+
     render() {
         return (
-            <div id="mainPage">
+            <div id={"mainPage"}>
                 <Head title={""} description={""} />
-                <Header />
-                {/*<Menu />*/}
+                <div id={"headerWrapper"}>
+                    <LangSelector />
+                    <Header />
+                </div>
+                <div id={"bodyWrapper"}>
+                    <Body />
+                </div>
+
                 <style jsx> {`
                     #mainPage {
                         margin: auto;
-                        border-bottom: 1px solid #ddd;
+                        overflow: hidden;
+                    }
+                    #headerWrapper {
+                        width: 100%;
+                        border: 1px solid #ddd;
                         box-shadow: 0 3px 2px -2px rgba(200,200,200,0.2);
+                    }
+                    #bodyWrapper {
+                        width: 100%;
+
+                        background: #fafafa;
                     }
                 `}</style>
             </div>

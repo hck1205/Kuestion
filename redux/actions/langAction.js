@@ -1,21 +1,23 @@
+import { LANG } from "../actionType"
+
 const langPack = {
     EN: {
-        k_culture: {
-            menuName : "K-Culture",
-            k_drama : "K-Drama",
-            k_pop : "K-POP",
-        }
+        freeTalk: {
+            menuName: "Free Talk",
+            firstGreeting: "First Greeting",
+            smallTalk: "Small Talk",
+        },
     },
     KO: {
-        k_culture: {
-            menuName : "한류문화",
-            k_drama : "한국드라마",
-            k_pop : "케이팝",
-        }
+        freeTalk: {
+            menuName: "자유게시판",
+            firstGreeting: "가입인사",
+            smallTalk: "잡담",
+        },
     },
 }
 
 export const setLanguage = lang => ({
-    type: "SET_LANGUAGE",
+    type: LANG.SET_LANGUAGE,
     payload: langPack[lang],
 })
