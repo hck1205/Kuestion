@@ -4,30 +4,30 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const next = require('next');
 
-const app = next({ dir:".", dev: CONFIG.isDev });
-const handler = app.getRequestHandler();
+const NextApp = next({ dir:".", dev: CONFIG.isDev });
+const NextHandler = NextApp.getRequestHandler();
+
 
 mongoose.connect(CONFIG.CONNECTION_STRING, {useNewUrlParser: true});
 mongoose.Promise = global.Promise;
 
-app.prepare().then(() => {
-       const server = express();
+NextApp.prepare().then(() => {
+       const ExpressApp = express();
 
-       server.use(bodyParser.json());
-       server.use(bodyParser.urlencoded({ extended:false }));
+       ExpressApp.use(bodyParser.json());
+       ExpressApp.use(bodyParser.urlencoded({ extended:false }));
 
        const userRoute = require('./routes/user.js');
        const systemRoute = require('./routes/system.js');
 
-       server.use("/user", userRoute);
-       server.use("/system", systemRoute);
+       ExpressApp.use("/user", userRoute);
+       ExpressApp.use("/system", systemRoute);
 
-
-       server.get("*", (req, res) => {
-           return handler(req, res);
+       ExpressApp.get("*", (req, res) => {
+           return NextHandler(req, res);
        });
 
-       server.listen(CONFIG.PORT, (err) => {
+       ExpressApp.listen(CONFIG.PORT, (err) => {
            if(err) throw err;
            console.log(`> Ready on ${CONFIG.PORT}`);
        })

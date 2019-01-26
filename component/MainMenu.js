@@ -45,7 +45,7 @@ class MainMenu extends Component {
         //         this.props.dispatch(updateDatetime(currentTime += 1000))
         //     },1000)
         // }
-        //
+
         // console.log(this.props.datetime)
     }
 
@@ -83,7 +83,7 @@ class MainMenu extends Component {
                     <a id={"title"}>Kuestion</a>
                 </div>
 
-                <a className={"menuWrapper"} onClick={""}>
+                <a className={"menuWrapper"}>
                     <div style={this.getMenuIcon(category.freeTalk)} className={"menuImage"} />
                     <div className={"menu"}>Free Talk</div>
                 </a>

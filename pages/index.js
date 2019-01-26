@@ -21,13 +21,12 @@ class Index extends Component {
         super(props);
     }
 
-    static async getInitialProps({reduxStore, req}) {
-
-        await Promise.all([ // initial dispatch
-            reduxStore.dispatch(fetchDatetime()),
-        ]).then(() => {
-            return {}
-        });
+    static async getInitialProps({reduxStore, req, query}) {
+        // await Promise.all([ // initial dispatch
+        //     reduxStore.dispatch(fetchDatetime()),
+        // ]).then(() => {
+        //     return {}
+        // });
 
         return {};
     }
