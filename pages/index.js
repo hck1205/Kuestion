@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Head from "../component/common/Head"
 import LangSelector from "../component/common/LangSelector"
-import Header from "../component/Header"
+import Header from "../component/MainMenu"
 import Body from "../component/Body"
 
 import { fetchDatetime } from '../redux/actions/timeAction'

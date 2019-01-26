@@ -22,13 +22,12 @@ const mapStateToProps = (store) => (
     }
 )
 
-class Header extends Component {
+class MainMenu extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
             searchText: "",
-            activeMenu: "freeTalk"
         }
 
         this.updateSearchText = this.updateSearchText.bind(this);
@@ -38,16 +37,16 @@ class Header extends Component {
     componentWillMount() {}
 
     componentDidMount() {
-        let currentTime = 0
-
-        if(this.props.datetime !== 0) {
-            currentTime = this.props.datetime
-            setInterval(() => {
-                this.props.dispatch(updateDatetime(currentTime += 1000))
-            },1000)
-        }
-
-        console.log(this.props.datetime)
+        // let currentTime = 0
+        //
+        // if(this.props.datetime !== 0) {
+        //     currentTime = this.props.datetime
+        //     setInterval(() => {
+        //         this.props.dispatch(updateDatetime(currentTime += 1000))
+        //     },1000)
+        // }
+        //
+        // console.log(this.props.datetime)
     }
 
     updateSearchText(e) {
@@ -60,25 +59,10 @@ class Header extends Component {
         alert(searchText)
     }
 
-    getActiveMenuClass(param) {
-        return param === this.state.activeMenu ? "active" : ""
-    }
-
     getMenuIcon(param) {
-        let style = { backgroundImage: '' }
-        let path = "/static/img/menu/"+ param
+        let path = "/static/img/menu/"+ param + ".png";
 
-        this.state.activeMenu === param ?
-            style.backgroundImage = `url(${path + "_active.png"})` :
-            style.backgroundImage = `url(${path + ".png"})`
-
-        return style
-    }
-
-    shiftMenu(param) {
-        this.setState({
-            activeMenu: category[param]
-        })
+        return { backgroundImage: `url(${path})` }
     }
 
     removeOverlay() {
@@ -90,37 +74,33 @@ class Header extends Component {
     }
 
     render() {
-        let { datetime } = this.props
-        const today = formatDatetime(datetime)
+        // let { datetime } = this.props
+        // const today = formatDatetime(datetime)
 
         return (
             <div id={"header"}>
                 <div id={"titleWrapper"}>
-                    <div id={"title"}>Kuestion</div>
+                    <a id={"title"}>Kuestion</a>
                 </div>
 
-                <a className={"menuWrapper " + this.getActiveMenuClass(category.freeTalk)}
-                   onClick={() => this.shiftMenu(category.freeTalk)}>
+                <a className={"menuWrapper"} onClick={""}>
                     <div style={this.getMenuIcon(category.freeTalk)} className={"menuImage"} />
-                    <div className={"menu " + this.getActiveMenuClass(category.freeTalk)}>Free Talk</div>
+                    <div className={"menu"}>Free Talk</div>
                 </a>
 
-                <a className={"menuWrapper " + this.getActiveMenuClass(category.culture)}
-                   onClick={() => this.shiftMenu(category.culture)}>
+                <a className={"menuWrapper"}>
                     <div style={this.getMenuIcon(category.culture)} className={"menuImage"} />
-                    <div className={"menu " + this.getActiveMenuClass(category.culture)}>Culture</div>
+                    <div className={"menu"} >Culture</div>
                 </a>
 
-                <a className={"menuWrapper " + this.getActiveMenuClass(category.shareDaily)}
-                   onClick={() => this.shiftMenu(category.shareDaily)}>
+                <a className={"menuWrapper"}>
                     <div style={this.getMenuIcon(category.shareDaily)} className={"menuImage"} />
-                    <div className={"menu " + this.getActiveMenuClass(category.shareDaily)}>Share Daily</div>
+                    <div className={"menu"}>Share Daily</div>
                 </a>
 
-                <a className={"menuWrapper " + this.getActiveMenuClass(category.living)}
-                   onClick={() => this.shiftMenu(category.living)}>
+                <a className={"menuWrapper"}>
                     <div style={this.getMenuIcon(category.living)} className={"menuImage"} />
-                    <div className={"menu " + this.getActiveMenuClass(category.living)}>Living in Korea</div>
+                    <div className={"menu"}>Living in Korea</div>
                 </a>
 
                 <div className={"searchWrapper"}>
@@ -133,9 +113,6 @@ class Header extends Component {
                     a:hover {
                         cursor: pointer;
                     }
-                    input:focus {
-                        outline: none;
-                    }
                     #header {
                         width: 1100px;
                         min-height: 50px;
@@ -145,6 +122,7 @@ class Header extends Component {
                     }
                     #titleWrapper {
                         margin-right: 50px;
+                        margin-top: 10px;
                         float: left;
                     }
                     #title {
@@ -157,9 +135,6 @@ class Header extends Component {
                         float: left;
                         min-height: 48px;
                         margin-right: 20px;
-                    }
-                    .menuWrapper.active {
-                        border-bottom: 2px solid #b92b27;
                     }
                     .menuImage {
                         float: left;
@@ -179,9 +154,6 @@ class Header extends Component {
                         margin-top: 18px;
                         margin-left: 3px;
                         color: #b2b2b2;
-                    }
-                    .menu.active {
-                        color: #b92b27;
                     }
                     .searchWrapper {
                         float: left;
@@ -215,4 +187,4 @@ class Header extends Component {
     }
 }
 
-export default connect(mapStateToProps)(Header)
+export default connect(mapStateToProps)(MainMenu)

@@ -1,38 +1,34 @@
-const express = require('express')
+const express = require('express');
 const CONFIG = require('../config/serverConfig');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const next = require('next')
+const next = require('next');
 
-const dev = process.env.NODE_ENV !== 'production'
-const app = next({ dir:".", dev })
-const handle = app.getRequestHandler();
+const app = next({ dir:".", dev: CONFIG.isDev });
+const handler = app.getRequestHandler();
 
 mongoose.connect(CONFIG.CONNECTION_STRING, {useNewUrlParser: true});
 mongoose.Promise = global.Promise;
 
-app.prepare()
-   .then(() => {
-       const app = express()
-       app.use(bodyParser.json())
-       app.use(bodyParser.urlencoded({extended:false}));
+app.prepare().then(() => {
+       const server = express();
 
-       const userRoute = require('./routes/user.js')
-       const systemRoute = require('./routes/system.js')
+       server.use(bodyParser.json());
+       server.use(bodyParser.urlencoded({ extended:false }));
 
-       app.use("/user", userRoute)
-       app.use("/system", systemRoute)
+       const userRoute = require('./routes/user.js');
+       const systemRoute = require('./routes/system.js');
 
-       app.get("*", (req, res) => {
-           return handle(req, res)
+       server.use("/user", userRoute);
+       server.use("/system", systemRoute);
+
+
+       server.get("*", (req, res) => {
+           return handler(req, res);
+       });
+
+       server.listen(CONFIG.PORT, (err) => {
+           if(err) throw err;
+           console.log(`> Ready on ${CONFIG.PORT}`);
        })
-
-       app.listen(CONFIG.PORT, (err) => {
-           if(err) throw err
-           console.log(`> Ready on ${CONFIG.PORT}`)
-       })
-   })
-   .catch(exception => {
-       console.error(exception.stack)
-       process.exit(1)
-   })
+   });
