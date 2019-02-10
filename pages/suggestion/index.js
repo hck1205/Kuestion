@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Head from '../../component/common/Head'
-
+import Layout from "../../component/common/Layout"
 
 const mapStateToProps = (store) => (
     {
@@ -11,8 +11,8 @@ const mapStateToProps = (store) => (
 class Index extends Component {
     render() {
         return(
-            <div id={ 'freeTalkMain' }>
-                <Head title="K-POP 페이지" description="KPOP" />
+            <Layout>
+ㅅㄷㄴㅅ
                 <style jsx>{`
                   #freeTalkMain {
                     background-color: black;
@@ -20,7 +20,7 @@ class Index extends Component {
                     height: 500px;
                   }
                 `}</style>
-            </div>
+            </Layout>
         )
     }
 }
