@@ -3,11 +3,6 @@ import React from "react";
 class MembershipPolicy extends React.Component  {
     constructor(props) {
         super(props)
-
-        this.state = {
-            policyChkBox: false,
-            agreementChkBox: false
-        }
     }
 
     textAreaHandler() {
@@ -20,13 +15,13 @@ class MembershipPolicy extends React.Component  {
                 <div className={"headText"}>노마디즘 이용약관</div>
                 <textarea className={"policyTextWrapper"} value={policyText} onChange={this.textAreaHandler}/>
                 <div className={"checkBox"}>
-                    노마디즘 약관의 동의합니다.<input type="checkbox" defaultValue={this.state.policyChkBox}/>
+                    노마디즘 약관의 동의합니다.<input type="checkbox" defaultValue={this.props.policyChkBox} onChange={(e)=>this.props.changeChkBox(e,"policyChkBox")} />
                 </div>
 
                 <div className={"headText"}>개인정보 수집 및 이용에 대한 동의</div>
                 <textarea className={"agreementTextWrapper"} value={agreementText} onChange={this.textAreaHandler}/>
                 <div className={"checkBox"}>
-                    개인정보 제공에 동의 합니다.<input type="checkbox" defaultValue={this.state.agreementChkBox}/>
+                    개인정보 제공에 동의 합니다.<input type="checkbox" defaultValue={this.props.agreementChkBox} onChange={(e)=>this.props.changeChkBox(e,"agreementChkBox")} />
                 </div>
                 <style jsx> {`
                     .policyWrapper {

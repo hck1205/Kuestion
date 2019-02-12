@@ -25,8 +25,9 @@ class BoardTitle extends Component {
                     border-radius: 4px;
                     border-bottom: 1px solid #e2e2e2;
                     margin-bottom: 8px;
-                    padding: 16px;
-                    padding-top: 16px;
+                    padding: 8px;
+                    padding-top: 8px;
+                    cursor: pointer;
                   }
                 `}</style>
             </div>

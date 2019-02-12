@@ -2,7 +2,7 @@ import serverConfig from './serverConfig'
 
 const { ADDR, PORT } = serverConfig
 
-export default function axiosConfig(method, url, key = "", name = "", data = "") {
+export default function axiosConfig(method, url, data = "", key = "", name = "") {
     let config = {
         url: url,
         method: method,

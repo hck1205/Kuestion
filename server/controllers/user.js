@@ -1,6 +1,11 @@
 const User = require('../models/user');
 
-exports.create = function(req, res) {
+exports.login = (req, res) => {
+    let userId = req.body.id
+    let userPw = req.body.pw
+}
+
+exports.create = (req, res) => {
     let user = new User({
         name: req.body.name,
         age: req.body.age

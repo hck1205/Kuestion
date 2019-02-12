@@ -13,14 +13,6 @@ const initialStore = {
         fetched: false,
         error: null
     },
-    language: {
-        lang: "EN",
-        freeTalk: {
-            menuName: "Free Talk",
-            firstGreeting: "First Greeting",
-            smallTalk: "Small Talk",
-        }
-    },
     common: {
         hasOverlay: false,
     },

@@ -11,5 +11,6 @@ export const LANG = {
 }
 
 export const COMMON = {
+    CHANGE_MENU: "CHANGE_MENU",
     TOGGLE_OVERLAY: "TOGGLE_OVERLAY",
 }

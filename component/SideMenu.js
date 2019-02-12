@@ -39,7 +39,7 @@ class SideMenu extends Component {
                     min-height: 700px;
                   }
                   #subMenuListWrapper {
-                    margin-top: 15px;
+                    margin-top: 3px;
                     font-family: 'Jua', 'Gulim';
                     font-size: 18px;
                     width: 130px;
@@ -50,9 +50,8 @@ class SideMenu extends Component {
                     display: block;
                   }
                   .submenu.active {
-                    padding-left: 5px;
+                    padding: 5px;
                     padding-top: 5px;
-                    padding-bottom: 3px;
                     border-radius: 3px;
                     background: #e6e6e6;
                   }
