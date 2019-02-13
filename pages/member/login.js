@@ -40,7 +40,10 @@ class Login extends Component {
             pw: this.state.pw
         }
 
-        axios(axiosConfig("POST", "/user/login", data)).then((res)=>{
+        axios(axiosConfig(
+            "POST",
+            "/user/login",
+            data)).then((res)=>{
             console.log(res)
         })
 
@@ -73,7 +76,7 @@ class Login extends Component {
                             <img src={"/static/img/sns_icon/naver.png"} className={"snsImg"}/>
                         </div>
                         <div className={"joinWrapper"}>
-                            <div id={"joinText"} onClick={(e)=>Router.push({pathname: "/member/join"})}>처음오셨나요? 회원가입</div>
+                            <div id={"joinText"} onClick={(e)=>Router.push({pathname: "/member/policy"})}>처음오셨나요? 회원가입</div>
                             <div id={"forgotText"}>비밀번호를 잊으셨나요? 비밀번호찾기</div>
                         </div>
                     </div>

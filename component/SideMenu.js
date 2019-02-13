@@ -26,7 +26,7 @@ class SideMenu extends Component {
                         let active = this.state.activeMenu === menu ? "active" : "";
                         return(
                             <a key={index} className={"submenu " + active}>
-                                <img src={""} />{menu}
+                                {menu}
                             </a>
                         )
                     })

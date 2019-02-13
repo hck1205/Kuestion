@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import Router, { withRouter } from 'next/router'
 import { updateDatetime } from '../../redux/actions/timeAction'
 import { changeMenu, toggleOverlay } from '../../redux/actions/commonAction'
-import { formatDatetime } from "../../static/js/expatik_help";
+import { formatDatetime } from "../../static/js/nomadism_help";
 
 const category = {
     notice: "notice",

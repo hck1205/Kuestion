@@ -1,8 +1,16 @@
 const User = require('../models/user');
 
+exports.join = (req, res) => {
+    console.log('test')
+    // User.find((error, students) => {
+    //     res.send(students);
+    // })
+};
+
 exports.login = (req, res) => {
     let userId = req.body.id
     let userPw = req.body.pw
+
 }
 
 exports.create = (req, res) => {
@@ -22,3 +30,4 @@ exports.get = (req, res) => {
     //     res.send(students);
     // })
 };
+

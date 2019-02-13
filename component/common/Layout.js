@@ -1,3 +1,4 @@
+import 'core-js/fn/object/assign'
 import Head from "./Head"
 import GNB from "./GlobalNavBar"
 import LeftPanel from "./LeftPanel"
