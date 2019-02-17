@@ -14,6 +14,13 @@ class SideMenu extends Component {
         this.state = {
             activeMenu: this.props.menuList[0]
         }
+
+        this.changeMenu = this.changeMenu.bind(this)
+    }
+
+    changeMenu(e, index) {
+      console.log(this.props.menuList[index])
+      this.setState({ activeMenu: this.props.menuList[index]})
     }
 
     render() {
@@ -25,9 +32,7 @@ class SideMenu extends Component {
 
                         let active = this.state.activeMenu === menu ? "active" : "";
                         return(
-                            <a key={index} className={"submenu " + active}>
-                                {menu}
-                            </a>
+                            <a key={index} className={"submenu " + active} onClick={(e)=>this.changeMenu(e, index)}>{menu}</a>
                         )
                     })
                 }

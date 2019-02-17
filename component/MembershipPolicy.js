@@ -53,6 +53,7 @@ class MembershipPolicy extends React.Component  {
                         margin-top: 15px;
                         margin-left: 47px;
                         margin-bottom: 10px;
+                        font-family: 'Jua', 'Gulim'
                    }
                 `}
                 </style>

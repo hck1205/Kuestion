@@ -1,7 +1,22 @@
 const User = require('../models/user');
 
-exports.join = (req, res) => {
-    console.log('test')
+exports.checkdup = (req, res) => {
+    // switch(req.body)
+    console.log(req.body)
+    switch(req.body.checkField) {
+        case "id": {
+
+        }
+        break;
+        case "nickname": {
+
+        }
+        break;
+        case "email": {
+
+        }
+        break;
+    }
     // User.find((error, students) => {
     //     res.send(students);
     // })

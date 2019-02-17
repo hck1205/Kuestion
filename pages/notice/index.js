@@ -27,10 +27,10 @@ class Index extends Component {
                 <Head title="Nomadism Notice" description="" />
                 <SideMenu menuList={menuList} />
                 <div className={"noticeWrapper"}>
+                  notice page
                 <style jsx>{`
                   .noticeWrapper {
                     float: left;
-                    background-color: black;
                     min-width: 920px;
                     min-height: 700px;
                   }
