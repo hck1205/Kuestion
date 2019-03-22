@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 const mapStateToProps = (store) => (
     {
-        // lang: store.lang.
+        // lang: store.lang
     }
 )
 class SideMenu extends Component {

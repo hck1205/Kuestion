@@ -8,7 +8,7 @@ class LeftPanel extends Component {
                 <style jsx>{`
                   #leftPanelWrapper {
                     float: left;
-                    min-width: 440px;
+                    width: 15%;
                     height: 1px;
                   }
                 `}</style>

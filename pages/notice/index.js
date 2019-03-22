@@ -31,7 +31,7 @@ class Index extends Component {
                 <style jsx>{`
                   .noticeWrapper {
                     float: left;
-                    min-width: 920px;
+                    min-width: 880px;
                     min-height: 700px;
                   }
                 `}</style>

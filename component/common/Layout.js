@@ -13,16 +13,23 @@ const Layout = (props) => (
         <Head />
         <GNB menu={props.menu} />
         <div className={"bodyWrapper"}>
-            <LeftPanel />
-            {props.children}
-            <RightPanel />
+            <div className={"contentWrapper"}>
+                {/*<LeftPanel />*/}
+                {props.children}
+                {/*<RightPanel />*/}
+            </div>
         </div>
         <style jsx> {`
         .bodyWrapper {
             overflow:hidden;
-            width: 2000px;
+            width: 100%;
             background: #fafafa;
             padding-top: 10px;
+            margin: auto;
+        }
+        .contentWrapper {
+            margin: auto;
+            width: 1100px;
         }
         `}</style>
     </div>

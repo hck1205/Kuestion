@@ -166,7 +166,7 @@ class GlobalNavBar extends Component {
                         .headerWrapperForBorder {
                             border-bottom: 1px solid #bbb;
                             box-shadow: 0 3px 2px -2px rgba(200,200,200,0.2);
-                            min-width: 2000px;
+                            width: 100%;
                         }
                         #header {
                             width: 1100px;

@@ -47,7 +47,8 @@ class Index extends Component {
                     min-width: 700px;
                     min-height: 700px;
                   }
-                `}</style>
+                `}
+            </style>
           </div>
         </Layout>
     )

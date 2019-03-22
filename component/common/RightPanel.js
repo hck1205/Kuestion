@@ -7,7 +7,7 @@ class RightPanel extends Component {
                 <style jsx>{`
                   #rightPanelWrapper {
                     float: left;
-                    min-width: 300px;
+                    width: 15%;
                     height: 1px;
                   }
                 `}</style>
